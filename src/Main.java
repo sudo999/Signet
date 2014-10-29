@@ -16,13 +16,14 @@ public class Main {
 		 * 	run(input array) method
 		 * 		sigma(sum i*w + bias) -> output
 		 * 	abstract train(correctValue) method
-		 *  protected deltaO(correctValue)
-		 * 			this.output*(1-this.output)*(this.output-correctValue)
+		 *  abstract delta(correctValue)		
 		 * 	hNeuron class - hidden neurons
 		 * 		Neuron array "outputs" (for feedforward) |same size as next layer
-		 * 		private deltaH(correctValue)
-		 * 			this.output*(1-this.output)* for[each output o] sum (deltaO(correctValue)*o.weightOf(this))
+		 * 		private delta(correctValue)
+		 * 			this.output*(1-this.output)* for[each output o] sum (o.delta(correctValue)*o.weightOf(this))
 		 * 	oNeuron class - output neurons
+		 * 		delta(correctValue)
+		 * 			this.output*(1-this.output)*(this.output-correctValue)
 		 * 	iNeuron class - input "neurons"
 		 * 		weight array and input array are both null
 		 * 		run() always does nothing
