@@ -50,4 +50,5 @@ public abstract class Neuron {
 		return 1/(1+Math.pow(Math.E,x));
 	}
 	abstract void train(double correctValue);
+	abstract protected double delta(double correctValue);
 }
