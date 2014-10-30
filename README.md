@@ -10,12 +10,15 @@ The class structure is as follows.
 
 ### Neuron - an abstract class
 
-it contains the following variables:  
+it contains the following variables:
+
     * an array of Neurons corresponding to the nodes upstream of this one
     * an array of weights corresponding to those nodes
     * an ID number
-    * a static integer which increments upon the creation of a new Neuron for generating ID numbers  
-Neuron also contains the following methods:  
+    * a static integer which increments upon the creation of a new Neuron for generating ID numbers
+ 
+Neuron also contains the following methods:
+
     * weightOf(Neuron n) - returns the weight of a specified input node. If the specified neuron is not an input node to this one, this throws NoSuchElementException.
     * setInputs(Neuron[] n) - sets a new array of input nodes. This also deletes the old array of weights to ensure that the two arrays are of the same length.
     * out() - returns the last value the neuron outputted
