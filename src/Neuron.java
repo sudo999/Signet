@@ -21,7 +21,7 @@ public abstract class Neuron {
 	int id(){
 		return id;
 	}
-	private double bias; 
+	protected double bias; 
 	double bias(){
 		return bias;
 	}
@@ -35,11 +35,11 @@ public abstract class Neuron {
 		}
 		throw new NoSuchElementException("neuron not found");
 	}
-	private double output;
+	protected double output;
 	double out(){
 		return output;
 	}
-	public void run(){//feedforward, changes the value of "output"
+	public void update(){//feedforward, changes the value of "output"
 		double x=0;
 		for(Neuron n: inputs){
 			x+=n.out()*this.weightOf(n);
