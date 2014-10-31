@@ -7,20 +7,23 @@ public class iNeuron extends Neuron {
 	}
 	public iNeuron(Neuron[] n){
 		super();
-		outputs=n;
+		outNodes=n;
 	}
 	public iNeuron(double d,Neuron[] n){
 		super();
 		output=d;
-		outputs=n;
+		outNodes=n;
 	}
 	public void setValue(double d){
 		output=d;
 	}
 	public void connectTo(Neuron[] n){
-		outputs=n;
+		outNodes=n;
 	}
-	Neuron[] outputs;
+	Neuron[] outNodes;
+	@Override
+	public void setInputs(Neuron[] ins){
+	}
 	@Override
 	public void update(){
 	}

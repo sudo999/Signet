@@ -2,7 +2,7 @@
 public class oNeuron extends Neuron {
 
 	public oNeuron() {
-		
+		super();
 	}
 
 	@Override

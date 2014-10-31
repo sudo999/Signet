@@ -17,7 +17,7 @@ public abstract class Neuron {
 		return n.id()==this.id();
 	}
 	private static int nextID=0;
-	private int id;
+	protected int id;
 	int id(){
 		return id;
 	}
@@ -46,9 +46,9 @@ public abstract class Neuron {
 		}
 		output=sigma(x+this.bias());
 	}
-	private double sigma(double x){//sigmoid function
+	private double sigma(double x){//sigmoid function, the backpropagation algorithm requires a smooth function
 		return 1/(1+Math.pow(Math.E,x));
 	}
-	abstract void train(double correctValue);
-	abstract protected double delta(double correctValue);
+	abstract void train(double correctValue);//backpropagation function to adjust weights recursively
+	abstract protected double delta(double correctValue);//used in backpropagation; its formula varies between hidden and output neurons
 }
